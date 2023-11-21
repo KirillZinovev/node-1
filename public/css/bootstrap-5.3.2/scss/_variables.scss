@@ -300,7 +300,7 @@ $cyans: (
 // scss-docs-start theme-color-variables
 $primary: $blue !default;
 $secondary: $gray-600 !default;
-$success: $black !default;
+$success: #7f8fa6;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
@@ -454,7 +454,7 @@ $body-emphasis-color: $black !default;
 //
 // Style anchor elements.
 
-$link-color: $primary !default;
+$link-color: #708cb3 !default;
 $link-decoration: underline !default;
 $link-shade-percentage: 20% !default;
 $link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
