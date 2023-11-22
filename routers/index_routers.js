@@ -14,7 +14,7 @@ router.post("/register", function (req, res) {});
 //   console.log("Прошли по пути тест");
 //   res.end("Hello");
 // });
-// app.use(myRoutes());
+
 // app.post("/test", (req, res) => {
 //   console.log("Прошли по пути post test");
 //   console.log(req.body);

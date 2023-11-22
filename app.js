@@ -8,6 +8,7 @@ const myRoutes = require("./routers/index_routers");
 app.use(express.json());
 app.use(express.urlencoded({ extendend: true }));
 
+app.use(myRoutes);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
