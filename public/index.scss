@@ -2,6 +2,7 @@
 @import "./css/bootstrap-5.3.2/scss/variables";
 @import "./css/bootstrap-5.3.2/scss/variables-dark";
 @import "./css/bootstrap-5.3.2/scss/mixins";
+@import "./css/bootstrap-5.3.2/scss/navbar";
 
 a.nav-link {
   display: block;
@@ -11,6 +12,15 @@ a.nav-link {
   border: 0;
 }
 
+a.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: #6f77a4;
+  text-decoration: none;
+  white-space: nowrap;
+}
 .btn.btn-outline-success {
   --bs-btn-color: #6f77a4;
   --bs-btn-border-color: #6f77a4;
