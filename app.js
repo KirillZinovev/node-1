@@ -73,6 +73,25 @@ sequelize
     console.log(result);
   })
   .catch((err) => console.log(err));
+
+User.create({
+  name: "Tom",
+  age: 35,
+})
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => console.log(err));
+User.create({
+  name: "Bob",
+  age: 31,
+})
+  .then((res) => {
+    const user = { id: res.id, name: res.name, age: res.age };
+    console.log(user);
+  })
+  .catch((err) => console.log(err));
+
 app.use((req, res, next) => {
   const err = new Error("Could't get path");
   err.status = 404;
