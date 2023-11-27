@@ -4,7 +4,16 @@ const path = require("path");
 const fs = require("fs");
 const ejs = require("ejs");
 const app = express("");
+const Sequelize = require("sequelize");
+const sqlite = require("sqlite3");
 const myRoutes = require("./routers/index_routers");
+const sequelize = new Sequelize({
+  dialect: "sqlite",
+  storage: "test.sqlite",
+  define: {
+    timestamps: false,
+  },
+});
 app.use(express.json());
 app.use(express.urlencoded({ extendend: true }));
 
@@ -41,6 +50,29 @@ function addLine(line) {
     }
   );
 }
+
+const User = sequelize.define("user", {
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+    allowNull: false,
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  age: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+});
+sequelize
+  .sync()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => console.log(err));
 app.use((req, res, next) => {
   const err = new Error("Could't get path");
   err.status = 404;
